@@ -84,9 +84,8 @@ const unprotectedCurrent = async (req, res) => {
   if (user) return res.send({ status: "success", payload: user });
 };
 export default {
-  current,
-  login,
   register,
+  login,
   current,
   unprotectedLogin,
   unprotectedCurrent,
