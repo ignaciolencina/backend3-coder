@@ -37,8 +37,16 @@ router.get("/mockingpets", async (req, res) => {
 
 // GET /api/mocks/mockingusers
 router.get("/mockingusers", async (req, res) => {
-  try {
-    const quantity = 50;
+ try {
+    const quantity = parseInt(req.query.quantity) || 50;
+
+    if (quantity <= 0) {
+      return res.status(400).json({
+        status: "error",
+        error: "Quantity must be a positive number",
+      });
+    }
+
     const mockUsers = await generateMockUsers(quantity);
 
     res.status(200).json({
