@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 
-import './database/database.js';
+import "./database/database.js";
 
 import usersRouter from "./routes/users.router.js";
 import petsRouter from "./routes/pets.router.js";
@@ -15,6 +15,25 @@ const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cookieParser());
+
+app.get("/", (_, res) => {
+  res.json({
+    status: "success",
+    message: "🐾 Pet Adoption API is running successfully!",
+    version: "1.0.0",
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || "development",
+    port: PORT,
+    endpoints: {
+      users: "/api/users",
+      pets: "/api/pets",
+      adoptions: "/api/adoptions",
+      sessions: "/api/sessions",
+      mocks: "/api/mocks",
+    },
+    documentation: "Use Postman or similar tools to test the API endpoints",
+  });
+});
 
 app.use("/api/users", usersRouter);
 app.use("/api/pets", petsRouter);

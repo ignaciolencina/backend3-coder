@@ -1,0 +1,13 @@
+FROM node:22.18.0
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY ./src ./src
+
+EXPOSE 5050
+
+CMD ["npm", "start"]
