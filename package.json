@@ -1,13 +1,13 @@
 {
   "name": "backend3-coder",
   "version": "1.0.0",
-  "description": "",
+  "description": "API de adopción de mascotas con Node.js, Express y MongoDB",
   "main": "./src/app.js",
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
     "dev": "node --watch --env-file=.env src/app.js",
-    "test": "mocha test/supertest.test.js"
+    "test": "mocha test/adoption.test.js"
   },
   "keywords": [],
   "author": "Ignacio Lencina",
