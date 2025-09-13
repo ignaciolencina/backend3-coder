@@ -1,6 +1,6 @@
-# 🎭 Endpoints de Mocks - API de Adopción de Mascotas
+# 🎭 API de Adopción de Mascotas
 
-Este README documenta los endpoints disponibles en el router `/api/mocks` para generar datos de prueba utilizando la librería Faker.js.
+Una API completa para gestionar un sistema de adopción de mascotas construida con Node.js, Express, MongoDB y Faker.js para generación de datos de prueba.
 
 > [!NOTE]
 > Debe usarse el comando de `npm run dev` para levantar el puerto, no se utilizó nodemon.
@@ -14,8 +14,61 @@ Crea un archivo `.env` en la raíz del proyecto:
 MONGODB_URI=mongodb://localhost:27017/tu_base_de_datos
 
 # Servidor
-PORT=3000
+PORT=5050
+NODE_ENV=development
 ```
+
+## 🐳 Docker
+
+[Link al repositorio de DockerHub](https://hub.docker.com/repository/docker/ignaciolencina/adoptme-api-image/general)
+
+
+
+### Usando Docker Compose
+
+```bash
+# Construir y levantar todos los servicios
+docker-compose up --build
+
+# Ejecutar en segundo plano
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Detener servicios
+docker-compose down
+```
+
+## 🧪 Testing
+
+### Ejecutar Tests
+
+```bash
+# Ejecutar todos los tests
+npm test
+
+# Ejecutar tests con información detallada
+npm test -- --reporter spec
+
+# Ejecutar tests específicos
+npx mocha test/adoption.test.js
+```
+
+
+## 📚 Documentación con Swagger
+
+Una vez que la aplicación esté ejecutándose, la documentación interactiva estará disponible en:
+
+```
+http://localhost:5050/api-docs
+```
+
+La documentación incluye:
+- 📋 Especificaciones completas de todos los endpoints
+- 🔧 Ejemplos de peticiones y respuestas
+- 📝 Modelos de datos
+- 🧪 Interfaz para probar los endpoints directamente
 
 ## 🛠 Endpoints Disponibles
 
