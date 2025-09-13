@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  pet-adoption-api:
+    build: .
+    container_name: pet-adoption-api
+    restart: unless-stopped
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      PORT: ${PORT}
+      MONGODB_URI: ${MONGODB_URI}
+    volumes:
+      - uploads:/app/src/public/img
+    networks:
+      - pet-adoption-network
+
+volumes:
+  uploads:
+    driver: local
+
+networks:
+  pet-adoption-network:
+    driver: bridge

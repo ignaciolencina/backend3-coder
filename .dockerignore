@@ -1,0 +1,21 @@
+# Archivos de configuración local
+.env
+*.env
+
+# Dependencias (se instalan dentro del contenedor)
+node_modules
+
+# Archivos de logs
+logs
+*.log
+
+# Git
+.git
+.gitignore
+
+# Archivos de build locales
+dist
+build
+
+# Docker
+docker-compose.yml
